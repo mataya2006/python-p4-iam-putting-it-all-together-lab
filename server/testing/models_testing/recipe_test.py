@@ -15,6 +15,13 @@ class TestRecipe:
             Recipe.query.delete()
             db.session.commit()
 
+            from models import User
+
+            user = User(username="testuser")
+            user.password = "testpassword"
+            db.session.add(user)
+            db.session.commit()
+
             recipe = Recipe(
                     title="Delicious Shed Ham",
                     instructions="""Or kind rest bred with am shed then. In""" + \
@@ -26,6 +33,7 @@ class TestRecipe:
                         """ smallness northward situation few her certainty""" + \
                         """ something.""",
                     minutes_to_complete=60,
+                    user_id=user.id
                     )
 
             db.session.add(recipe)

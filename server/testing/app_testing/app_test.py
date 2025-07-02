@@ -243,7 +243,7 @@ class TestRecipeIndex:
                 image_url=fake.url(),
             )
 
-            user.password_hash = 'secret'
+            user.password = 'secret'
 
             db.session.add(user)
 
@@ -318,7 +318,7 @@ class TestRecipeIndex:
                 bio=fake.paragraph(nb_sentences=3),
                 image_url=fake.url(),
             )
-            user.password_hash = 'secret'
+            user.password = 'secret'
             
             db.session.add(user)
             db.session.commit()
@@ -363,7 +363,7 @@ class TestRecipeIndex:
                 bio=fake.paragraph(nb_sentences=3),
                 image_url=fake.url(),
             )
-            user.password_hash = 'secret'
+            user.password = 'secret'
             
 
             db.session.add(user)
